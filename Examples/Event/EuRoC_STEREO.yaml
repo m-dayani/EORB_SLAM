@@ -1,0 +1,265 @@
+%YAML:1.0
+
+# EuRoC (non-event) Dataset Parameters
+
+#--------------------------------------------------------------------------------------------
+# Dataset Parameters.
+#--------------------------------------------------------------------------------------------
+
+# Dataset name (used to save/load final pose results
+DS.name: "euroc"
+# Valid options: "euroc", "ev_ethz", ("ev_mvsec" with ROS enabled)
+DS.format: "euroc"
+# Different configurations: idle, mono_im, mono_im_imu, mono_ev, mono_ev_imu,
+#    mono_ev_im, mono_ev_im_imu, stereo_im, stereo_im_imu
+DS.config: "stereo_im"
+
+# Paths other than root ds path are relative to root ds
+Path.DS:
+    root: "/media/masoud/Software Center/_Datasets/EuRoC_eth"
+    imageFile: "mav0/cam0/data.csv"
+    imageBase: "mav0/cam0/data"
+    imageFileRight: "mav0/cam1/data.csv"
+    imageBaseRight: "mav0/cam1/data"
+    imu: "mav0/imu0/data.csv"
+    gt: "mav0/state_groundtruth_estimate0/data.csv"
+# Relative to the current execution path
+Path.ORBvoc: "Vocabulary/ORBvoc.txt"
+
+# -1 for all sequences, run the target seq
+DS.Seq.target: 0
+DS.Seq.names:
+    - MH_01
+    - MH_02
+    - MH_03
+    - MH_04
+    - MH_05
+    - V1_01
+    - V1_02
+    - V1_03
+    - V2_01
+    - V2_02
+    - V2_03
+
+# Process each sequence nMaxIter times
+DS.nMaxIter: 1
+
+# Other options (currently not used)
+DS.Seq.count: 1
+Path.outTrajectory: ""
+DS.imu.gyroFirst: 1
+DS.gt.qwFirst: 1
+DS.gt.posFirst: 1
+DS.timestamp.factor: 1e9
+
+#--------------------------------------------------------------------------------------------
+# Camera Parameters. Adjust them!
+#--------------------------------------------------------------------------------------------
+Camera.type: "PinHole"
+
+# Camera calibration and distortion parameters (OpenCV) 
+Camera.fx: 435.2046959714599
+Camera.fy: 435.2046959714599
+Camera.cx: 367.4517211914062
+Camera.cy: 252.2008514404297
+
+Camera.k1: 0.0
+Camera.k2: 0.0
+Camera.p1: 0.0
+Camera.p2: 0.0
+
+# Rectification matrix
+Camera.R:  !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: d
+  data: [0.999966347530033, -0.001422739138722922, 0.008079580483432283, 0.001365741834644127, 0.9999741760894847, 0.007055629199258132, -0.008089410156878961, -0.007044357138835809, 0.9999424675829176]
+
+# Projection matrix, opencv generated P might be better!
+Camera.P:  !!opencv-matrix
+  rows: 3
+  cols: 4
+  dt: d
+  data: [435.2046959714599, 0, 367.4517211914062, 0,  0, 435.2046959714599, 252.2008514404297, 0,  0, 0, 1, 0]
+
+# Camera resolution
+Camera.width: 752
+Camera.height: 480
+
+# Camera frames per second 
+Camera.fps: 20.0
+
+# Color order of the images (0: BGR, 1: RGB. It is ignored if images are grayscale)
+Camera.RGB: 1
+
+# Stereo Parameters:
+
+# Camera calibration and distortion parameters (OpenCV)
+Camera2.fx: 457.587
+Camera2.fy: 456.134
+Camera2.cx: 379.999
+Camera2.cy: 255.238
+
+Camera2.k1: -0.28368365
+Camera2.k2: 0.07451284
+Camera2.p1: -0.00010473
+Camera2.p2: -3.555907e-05
+
+# Rectification matrix
+Camera2.R:  !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: d
+  data: [0.999966347530033, -0.001422739138722922, 0.008079580483432283, 0.001365741834644127, 0.9999741760894847, 0.007055629199258132, -0.008089410156878961, -0.007044357138835809, 0.9999424675829176]
+
+# Projection matrix, opencv generated P might be better!
+Camera2.P:  !!opencv-matrix
+  rows: 3
+  cols: 4
+  dt: d
+  data: [435.2046959714599, 0, 367.4517211914062, 0,  0, 435.2046959714599, 252.2008514404297, 0,  0, 0, 1, 0]
+
+# stereo baseline times fx
+Camera.bf: 47.90639384423901
+
+# Close/Far threshold. Baseline times.
+ThDepth: 35.0
+
+# Deptmap values factor
+#DepthMapFactor: 5000.0
+
+# Transformation from camera to body-frame (imu)
+Tbc: !!opencv-matrix
+   rows: 4
+   cols: 4
+   dt: f
+   data: [0.0148655429818, -0.999880929698, 0.00414029679422, -0.0216401454975,
+         0.999557249008, 0.0149672133247, 0.025715529948, -0.064676986768,
+        -0.0257744366974, 0.00375618835797, 0.999660727178, 0.00981073058949,
+         0.0, 0.0, 0.0, 1.0]
+
+# IMU noise
+IMU.NoiseGyro: 1.7e-4 #1.6968e-04 
+IMU.NoiseAcc: 2.0000e-3 #2.0e-3
+IMU.GyroWalk: 1.9393e-05 
+IMU.AccWalk: 3.0000e-03 # 3e-03
+IMU.Frequency: 200
+
+#thFarPoints: 20.0
+
+#--------------------------------------------------------------------------------------------
+# Stereo Rectification. Only if you need to pre-rectify the images.
+# Camera.fx, .fy, etc must be the same as in LEFT.P
+#--------------------------------------------------------------------------------------------
+LEFT.height: 480
+LEFT.width: 752
+LEFT.D: !!opencv-matrix
+  rows: 1
+  cols: 5
+  dt: d
+  data:[-0.28340811, 0.07395907, 0.00019359, 1.76187114e-05, 0.0]
+LEFT.K: !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: d
+  data: [458.654, 0.0, 367.215, 0.0, 457.296, 248.375, 0.0, 0.0, 1.0]
+LEFT.R:  !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: d
+  data: [0.999966347530033, -0.001422739138722922, 0.008079580483432283, 0.001365741834644127, 0.9999741760894847, 0.007055629199258132, -0.008089410156878961, -0.007044357138835809, 0.9999424675829176]
+LEFT.P:  !!opencv-matrix
+  rows: 3
+  cols: 4
+  dt: d
+  data: [435.2046959714599, 0, 367.4517211914062, 0,  0, 435.2046959714599, 252.2008514404297, 0,  0, 0, 1, 0]
+
+RIGHT.height: 480
+RIGHT.width: 752
+RIGHT.D: !!opencv-matrix
+  rows: 1
+  cols: 5
+  dt: d
+  data:[-0.28368365, 0.07451284, -0.00010473, -3.555907e-05, 0.0]
+RIGHT.K: !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: d
+  data: [457.587, 0.0, 379.999, 0.0, 456.134, 255.238, 0.0, 0.0, 1]
+RIGHT.R:  !!opencv-matrix
+  rows: 3
+  cols: 3
+  dt: d
+  data: [0.9999633526194376, -0.003625811871560086, 0.007755443660172947, 0.003680398547259526, 0.9999684752771629, -0.007035845251224894, -0.007729688520722713, 0.007064130529506649, 0.999945173484644]
+RIGHT.P:  !!opencv-matrix
+  rows: 3
+  cols: 4
+  dt: d
+  data: [435.2046959714599, 0, 367.4517211914062, -47.90639384423901, 0, 435.2046959714599, 252.2008514404297, 0, 0, 0, 1, 0]
+
+#--------------------------------------------------------------------------------------------
+# Feature Detection and Extraction
+#--------------------------------------------------------------------------------------------
+
+# Feature detection mode (Regular Images): 0: ORB, 1: AKAZE, 2: Mixed
+Features.mode: 0
+
+# Must be > 3 for reliable operation
+Features.imMargin: 19
+
+#--------------------------------------------------------------------------------------------
+# ORB Parameters
+#--------------------------------------------------------------------------------------------
+
+# ORB Extractor: Number of features per image
+ORBextractor.nFeatures: 1200 # 1000
+
+# ORB Extractor: Scale factor between levels in the scale pyramid 	
+ORBextractor.scaleFactor: 1.2
+
+# ORB Extractor: Number of levels in the scale pyramid	
+ORBextractor.nLevels: 8
+
+# ORB Extractor: Fast threshold
+# Image is divided in a grid. At each cell FAST are extracted imposing a minimum response.
+# Firstly we impose iniThFAST. If no corners are detected we impose a lower value minThFAST
+# You can lower these values if your images have low contrast			
+ORBextractor.iniThFAST: 20
+ORBextractor.minThFAST: 7
+
+#--------------------------------------------------------------------------------------------
+# AKAZE Parameters
+#--------------------------------------------------------------------------------------------
+
+# Number of features per image
+AKAZEextractor.nFeatures: 500
+
+# Scale factor between levels in the scale pyramid 	
+# AKAZEextractor.scaleFactor: 1.05
+
+# Number of levels in the scale pyramid
+# Better to choose these according to ORB for consistency	
+AKAZEextractor.nOctaveLayers: 2 # nOL = ln(2)/ln(ORB_sf)
+AKAZEextractor.nOctaves: 4 # nO = ORB_nL/nOL
+
+# Threshold	
+AKAZEextractor.iniTh: 1e-3
+AKAZEextractor.minTh: 1e-6
+
+#--------------------------------------------------------------------------------------------
+# Viewer Parameters
+#--------------------------------------------------------------------------------------------
+Viewer.UseViewer: 1
+Viewer.KeyFrameSize: 0.05
+Viewer.KeyFrameLineWidth: 1
+Viewer.GraphLineWidth: 0.9
+Viewer.PointSize: 2
+Viewer.CameraSize: 0.08
+Viewer.CameraLineWidth: 3
+Viewer.ViewpointX: 0
+Viewer.ViewpointY: -0.7
+Viewer.ViewpointZ: -3.5 # -1.8
+Viewer.ViewpointF: 500
+
+
+

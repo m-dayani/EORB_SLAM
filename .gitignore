@@ -1,0 +1,13 @@
+lib
+results
+build*
+Examples/Monocular*
+Examples/RGB-D
+Examples/Stereo*
+Examples/Test
+evaluation/Ground_truth
+Vocabulary
+debug_proj_breaks.txt
+eval_test_poses.txt
+test_frame_poses.txt
+viz_comp_pose_map_args.txt
