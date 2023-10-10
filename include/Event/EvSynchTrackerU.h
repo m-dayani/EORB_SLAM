@@ -47,6 +47,9 @@ namespace EORB_SLAM {
         void localMappingSynch(EvFramePtr& pRefFrame, ORB_SLAM3::KeyFrame* pKFini, EvFramePtr& pCurrFrame, ORB_SLAM3::KeyFrame* pKFcur);
 
         void resetTracker() override;
+        
+        //void preProcessing(const PoseImagePtr& pImage);
+        //void postProcessing(const PoseImagePtr& pImage);
 
     private:
 

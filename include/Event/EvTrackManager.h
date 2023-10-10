@@ -126,6 +126,10 @@ namespace EORB_SLAM
         int trackAndOptEvFrameSynch(ORB_SLAM3::FramePtr& pFrame);
         void trackEvFrameSynch(ORB_SLAM3::FramePtr& pFrame);
 
+        void eventImageInitOptimization(ORB_SLAM3::Map* pMap, int nIterations = 20);
+        void eventImageInitOptimization(ORB_SLAM3::Map* pMap, ORB_SLAM3::KeyFrame* pKFini,
+                ORB_SLAM3::KeyFrame* pKFcur, int nIterations = 20);
+                
         void trackEvKeyFrameSynch(ORB_SLAM3::KeyFrame* pKFcur);
 
         bool resolveEventMapInit(ORB_SLAM3::FramePtr& pFrIni, ORB_SLAM3::KeyFrame* pKFini,

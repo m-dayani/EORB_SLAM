@@ -209,7 +209,7 @@ int main(int argc, char* argv[]) {
         //rosbag::View gtView(gtBag, rosbag::TopicQuery(topics));
         /*foreach(rosbag::MessageInstance const m, gtView) {
 
-                cout << "bili" << endl;
+                cout << "something" << endl;
                 if (m.getTopic() == gtPoseTopic || ("/" + m.getTopic() == gtPoseTopic)) {
                     auto gtData = m.instantiate<geometry_msgs::PoseStamped>();
                     if (gtData != NULL)

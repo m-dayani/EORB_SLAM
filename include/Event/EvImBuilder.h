@@ -26,6 +26,7 @@
 #include "EventFrame.h"
 #include "EvBaseTracker.h"
 #include "EvAsynchTracker.h"
+//#include "EvOptimizer.h"
 
 #include "Converter.h"
 #include "KeyFrame.h"

@@ -55,7 +55,7 @@ namespace EORB_SLAM {
         void insertRefKeyFrameSynch(ORB_SLAM3::KeyFrame* pKFref);
 
         bool initMapSynch(EvFrame& refFrame, EvFrame& curFrame, ORB_SLAM3::KeyFrame* refKF,
-                          ORB_SLAM3::KeyFrame* curKF, float medDepth, bool cleanMap);
+                          ORB_SLAM3::KeyFrame* curKF, float medDepth, bool cleanMap); // = true);
 
         void assignKPtsLevelDesc(const EvFrame& refFrame, EvFrame& currFrame, const cv::Mat& currIm);
 

@@ -146,7 +146,7 @@ void Viewer::Run()
     const bool isSensorImage = mpTracker->mpSensor->isImage();
     EORB_SLAM::MySensorConfig::SensorConfig sConf = mpTracker->mpSensor->getConfig();
 
-    pangolin::CreateWindowAndBind("ORB-SLAM3: Map Viewer",1024,768);
+    pangolin::CreateWindowAndBind("EORB-SLAM: Map Viewer",1024,768);
 
     // 3D Mouse handler requires depth testing to be enabled
     glEnable(GL_DEPTH_TEST);
@@ -190,7 +190,7 @@ void Viewer::Run()
     Twwp.SetIdentity();
 
     if (isSensorImage) {
-        cv::namedWindow("ORB-SLAM3: Current Frame");
+        cv::namedWindow("EORB-SLAM: Current Frame");
     }
 
     bool bFollow = true;
@@ -370,7 +370,7 @@ void Viewer::Run()
 //        }
 
         //if (isSensorImage) {
-        cv::imshow("ORB-SLAM3: Current Frame", toShow);
+        cv::imshow("EORB-SLAM: Current Frame", toShow);
         cv::waitKey(static_cast<int>(mpViewerParams->mT));
        //}
 

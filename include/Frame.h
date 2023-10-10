@@ -400,7 +400,7 @@ public:
 
     cv::Mat imgLeft, imgRight;
 
-    std::weak_ptr<Frame> mpEvFrame;
+    std::weak_ptr<Frame> mpEvFrame; // Frame* mpEvFrame??
 
 protected:
     // Important members that should not be public (for further extension of this class)

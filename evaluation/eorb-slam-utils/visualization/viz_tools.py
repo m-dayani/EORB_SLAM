@@ -152,7 +152,7 @@ if __name__ == "__main__":
     ax = fig.gca(projection='3d')
 
     # draw_coord_sys(ax, np.identity(4, dtype=np.float32), 0.05, 'O')
-    plot_traj_3d(ax, np.array([[0, 0, 0], [1, 2, -1], [2, 1, 0]]), 'bili', ['c', '*', 'r'])
+    plot_traj_3d(ax, np.array([[0, 0, 0], [1, 2, -1], [2, 1, 0]]), '2d-array', ['c', '*', 'r'])
 
     ax.set_xlabel('X')
     ax.set_ylabel('Y')

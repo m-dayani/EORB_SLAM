@@ -12,7 +12,7 @@ DS.name: "ev_ethz"
 DS.format: "ev_ethz"
 # Different configurations: idle, mono_im, mono_im_imu, mono_ev, mono_ev_imu,
 #    mono_ev_im, mono_ev_im_imu
-DS.config: "mono_ev_imu"
+DS.config: "mono_ev"
 
 # Paths other than root ds path are relative to root ds
 # Only need to change the root if format is correct
@@ -27,7 +27,7 @@ Path.DS:
 Path.ORBvoc: "Vocabulary/ORBvoc.txt"
 
 # -1 for all sequences, run the target seq (starts from 0)
-DS.Seq.target: 8
+DS.Seq.target: 7
 DS.Seq.names:
     - shapes_6dof
     - shapes_translation
