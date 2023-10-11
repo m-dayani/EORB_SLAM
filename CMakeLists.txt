@@ -291,9 +291,9 @@ target_link_libraries(fmt_kitti ${PROJECT_NAME})
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/Examples/Test)
 
-add_executable(glog_test
-Examples/Test/glog_test.cpp)
-target_link_libraries(glog_test ${PROJECT_NAME})
+#add_executable(glog_test
+#Examples/Test/glog_test.cpp)
+#target_link_libraries(glog_test ${PROJECT_NAME})
 
 #add_executable(static_fun_redef
 #Examples/Test/static_fun_redef.cpp)
