@@ -36,3 +36,6 @@ Examples/Test/*
 
 Vocabulary/ORBvoc.txt
 
+!./*.sh
+
+
