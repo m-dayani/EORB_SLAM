@@ -1,12 +1,13 @@
 #!/bin/bash
+
 # Install build essential
 sudo apt update -y
 sudo apt install -y build-essential
 sudo apt-get install -y manpages-dev
+sudo apt install -y software-properties-common
 gcc --version
 
 # On Ubuntu 20.04, you need to install gcc and g++ 7
-sudo apt install -y software-properties-common
 sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
 sudo apt update -y
 sudo apt install -y gcc-7 g++-7
@@ -53,6 +54,7 @@ cd .. #/home
 sudo apt install -y libeigen3-dev
 
 # Install Ceres-solver 1.14
+# NOTE: CERES MUST BE INSTALLED BEFORE OPENCV
 # CMake
 sudo apt install -y cmake
 # google-glog + gflags
@@ -324,7 +326,7 @@ make -j4
 cd ../../.. #EORB_SLAM
 mkdir build
 cd build
-sed -i 's/++11/++14/g' ../CMakeLists.txt
+#sed -i 's/++11/++14/g' ../CMakeLists.txt
 cmake ..
 make -j4
 
