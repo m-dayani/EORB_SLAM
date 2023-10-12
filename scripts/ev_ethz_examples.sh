@@ -1,5 +1,5 @@
 #!/bin/bash
-pathDatasetEvEthz='/media/masoud/Fast Store/_Datasets/event' #Example, it is necesary to change it by the dataset path
+pathDatasetEvEthz='/ev_dataset/event' #Example, it is necesary to change it by the dataset path
 
 #------------------------------------
 # Monocular Examples

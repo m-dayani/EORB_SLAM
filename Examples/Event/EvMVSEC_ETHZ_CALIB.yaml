@@ -15,7 +15,7 @@ DS.config: "mono_ev_im"
 # Paths other than root ds path are relative to root ds
 # Only need to change the root if format is correct
 Path.DS:
-    root: "/media/masoud/Software Center/_Datasets/event"
+    root: "/ds_path/event"
     imageFile: "images.txt"
     imageBase: ""
     events: "eslices"

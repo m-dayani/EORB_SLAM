@@ -16,7 +16,7 @@ DS.config: "mono_im_imu"
 
 # Paths other than root ds path are relative to root ds
 Path.DS:
-    root: "/media/masoud/Fun_Center/_Datasets/EuRoC_eth"
+    root: "/ds_path/EuRoC_eth"
     imageFile: "mav0/cam0/data.csv"
     imageBase: "mav0/cam0/data"
     imageFileRight: "mav0/cam1/data.csv"

@@ -16,7 +16,7 @@ DS.config: "mono_im"
 
 # Paths other than root ds path are relative to root ds
 Path.DS:
-  root: "/media/masoud/Fun Center/_Datasets/KITTI_Benchmark/dataset/sequences"
+  root: "/ds_path/KITTI_Benchmark/dataset/sequences"
   imageFile: "times.txt"
   imageBase: "image_0"
   gt: "../poses"

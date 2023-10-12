@@ -364,9 +364,9 @@ namespace EORB_SLAM
                     // save the map at a specific time
                     double lastTs = l1Evs.back().ts - firstTs;
                     if (lastTs > 15.0 && lastTs < 15.1) {
-                        mpL2AsynchTracker->saveAtlas("/home/masoud/event-map.txt");
-                        saveTrajectory("/home/masoud/event-kf-pose.txt");
-                        saveFrameTrajectory("/home/masoud/event-fr-pose.txt");
+                        mpL2AsynchTracker->saveAtlas("/home_dir/event-map.txt");
+                        saveTrajectory("/home_dir/event-kf-pose.txt");
+                        saveFrameTrajectory("/home_dir/event-fr-pose.txt");
                         cout << "Saved atlas at: " << lastTs << endl;
                     }
                 }

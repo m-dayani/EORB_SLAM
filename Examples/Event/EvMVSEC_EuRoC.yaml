@@ -15,7 +15,7 @@ DS.config: "mono_im_imu"
 # Paths other than root ds path are relative to root ds
 # Only need to change the root if format is correct
 Path.DS:
-    root: "/media/masoud/Fast Store/_Datasets/event"
+    root: "/ds_path/event"
     imageFile: "mav0/cam0/data.csv"
     imageBase: "mav0/cam0/data"
     events: "mav0/event0/data.txt"

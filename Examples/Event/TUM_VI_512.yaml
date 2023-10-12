@@ -16,7 +16,7 @@ DS.config: "mono_im"
 
 # Paths other than root ds path are relative to root ds
 Path.DS:
-  root: "/media/masoud/Software Center/_Datasets/TUM_VI"
+  root: "/ds_path/TUM_VI"
   imageFile: "mav0/cam0/data.csv"
   imageBase: "mav0/cam0/data"
   imu: "mav0/imu0/data.csv"

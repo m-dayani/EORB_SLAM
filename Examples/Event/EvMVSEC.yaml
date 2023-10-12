@@ -14,7 +14,7 @@ DS.config: "mono_im"
 # Paths other than root ds path are relative to root ds
 # Only need to change the root if format is correct
 Path.DS:
-    root: "/media/masoud/Fun Center/_Datasets/Event_stereo"
+    root: "/ds_path/Event_stereo"
     imageFile: "/davis/left/camera_info"
     imageBase: "/davis/left/image_raw"
     events: "/davis/left/events"

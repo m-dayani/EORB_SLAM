@@ -16,7 +16,7 @@ DS.config: "stereo_im"
 
 # Paths other than root ds path are relative to root ds
 Path.DS:
-    root: "/media/masoud/Software Center/_Datasets/EuRoC_eth"
+    root: "/ds_path/EuRoC_eth"
     imageFile: "mav0/cam0/data.csv"
     imageBase: "mav0/cam0/data"
     imageFileRight: "mav0/cam1/data.csv"

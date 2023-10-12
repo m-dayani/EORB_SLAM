@@ -63,8 +63,10 @@ To make life easier for you, I included a bash script (`build_eorb_slam.sh`) and
     - [The MVSEC dataset](https://daniilidis-group.github.io/mvsec/)
 2. You can also use a non-event-based dataset to explore the visual and inertial modes:
     - [The EuRoC dataset](https://projects.asl.ethz.ch/datasets/doku.php?id=kmavvisualinertialdatasets)
-3. Edit a configuration file (listed in `Examples/Event/*.yaml`)
-4. Run an example:
+3. Extract the ORB Vocabulary file in the Vocabulary directory
+4. Edit a configuration file (listed in `Examples/Event/*.yaml`)
+5. Disable the visualization mode in the configuration file if running a Docker container.
+6. Run an example:
   `./Examples/Event/fmt_ev_ethz ./Examples/Event/EvETHZ.yaml`
 
 ## Troubleshooting

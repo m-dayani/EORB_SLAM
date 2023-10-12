@@ -1,5 +1,5 @@
 #!/bin/bash
-pathDatasetTUM_VI='/media/masoud/Fast Store/_Datasets/event' #Example, it is necesary to change it by the dataset path
+pathDatasetTUM_VI='/ev_dataset/event' #Example, it is necesary to change it by the dataset path
 
 #------------------------------------
 # Monocular Examples

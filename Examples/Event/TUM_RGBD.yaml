@@ -16,7 +16,7 @@ DS.config: "mono_im"
 
 # Paths other than root ds path are relative to root ds
 Path.DS:
-  root: "/media/masoud/Software Center/_Datasets/TUM_RGBD"
+  root: "/ds_path/TUM_RGBD"
   imageFile: "rgb.txt"
   imageBase: ""
   depthFile: "depth.txt"
