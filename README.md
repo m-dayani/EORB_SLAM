@@ -2,6 +2,14 @@
 
 This project is a feature-based odometry/SLAM algorithm that is used to estimate the 6DoF pose of a robot and reconstruct the 3D point cloud of the scene using a variety of sensors. This project is built on an older version of the [ORB-SLAM](https://github.com/UZ-SLAMLab/ORB_SLAM3) algorithm. It extends ORB-SLAM, which allows simultaneous localization and mapping using a monocular [DAVIS event camera](https://en.wikipedia.org/wiki/Event_camera). In addition to the configurations in the original work, this project supports Event-only, Event-IMU, Event-Image, and Event-Image-IMU modes. Please refer to [this article](https://arxiv.org/abs/2301.00618) for an explanation of the event-based configuration (no image).
 
+**Contributions**:
+
+- Support for DAVIS event cameras
+- Added these modes to the original algorithm: Event-only, Event-Image (monocular), Event-Image-Inertial (monocular), Event-Inertial (monocular)
+- Dataset loader can automatically load different datasets and configuration parameters
+- Introducing sensor configuration object
+- Mixed key point tracking (in addition to ORB features, the proposed algorithm can use both the AKAZE and ORB features for image-based SLAM)
+
 ## Dependencies
 
 Since this project is an extension of the ORB-SLAM algorithm, it inherits all its dependencies in addition to new ones. These instructions are for Ubuntu 20.04 LTS. A successful build requires a stable internet connection (downloads more than 2 GB of data!) and a powerful machine with about 16 GB RAM.
